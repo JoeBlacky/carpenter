@@ -1,0 +1,21 @@
+// About section contains all information about owner.
+#about{
+  &::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  h2{
+    color: $secondary-color;
+  }
+  p{
+    margin: 0 0 $main-indent*.75;
+    text-align: justify;
+    color: #252525;
+  }
+  img{
+    float: left;
+    margin: 0 $main-indent $main-indent/2 0;
+    background-image: url(../img/ornaments/2.png);
+  }
+}

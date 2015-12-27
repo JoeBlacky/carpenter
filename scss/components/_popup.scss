@@ -1,0 +1,139 @@
+$popup-container: '.popup';
+$popup-content: '.content';
+$popup-content-block: '.content-block';
+$popup-content-padding: $main-indent;
+$popup-content-blocks-width: 47.827%;
+$close-button-width: 40px;
+$close-button-height: $close-button-width;
+$popup-show-speed: $slow-speed;
+// All modal elements described here.
+#{$popup-container}{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(#000, .2);
+  z-index: 11;
+  text-align: center;
+  @extend %hidden;
+  @extend %transition-normal-speed;
+  &.active{
+    @extend %visible;
+  }
+  &::before{
+    content: '';
+    width: 0;
+    height: 100%;
+    @extend %inline-block-middle;
+  }
+  h3{
+      font-size: 30px;
+      padding: 0 ($close-button-width + 10px);
+      margin: 0 0 $main-indent*2;
+  }
+  p{
+    margin: $main-indent/2 0 0;
+    text-align: justify;
+    &:first-child{
+      margin: 0;
+    }
+  }
+  input{
+    display: block;
+    width: auto;
+    margin: $main-indent auto 0;
+  }
+  .close{
+      position: absolute;
+      width: $close-button-width;
+      height: $close-button-height;
+      right: $popup-content-padding;
+      top: $popup-content-padding;
+      color: #FFF;
+      background: $error-color;
+      text-align: center;
+      cursor: pointer;
+      @include border-radius(2px);
+      @extend %transition-normal-speed;
+      &:hover{
+          background: darken($error-color, 10%);
+      }
+      &::before{
+          font: 24px/#{$close-button-height} $icons-font;
+      }
+  }
+  #{$popup-content}{
+    position: relative;
+    width: 100%;
+    max-width: $main-width;
+    max-height: 100%;
+    padding: $popup-content-padding;
+    background: #FFF;
+    text-align: left;
+    overflow-x: hidden;
+    @extend %hidden;
+    @extend %transition-normal-speed;
+    @include scale(.5);
+    &.loading{
+      &::before{
+        background-color: #FFF;
+      }
+    }
+    &.loaded{
+      @extend %visible;
+      @include scale(1);
+    }
+  }
+  #{$popup-content-block}{
+    position: relative;
+    vertical-align: top;
+    width: $popup-content-blocks-width;
+    padding: $main-indent*1.5 $main-indent;
+    margin: 0 (100% - $popup-content-blocks-width*2)/4 $main-indent*2;
+    font-size: 16px;
+    &::before,
+    &::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      left: 0;
+      background: url(../img/borders/5.png) no-repeat center center / 100% 100%;
+    }
+    &::before{
+      top: 0;
+    }
+    &::after{
+      bottom: 0;
+      @include rotate(180);
+    }
+  }
+  $image-correction-indent: 2.2727%;
+  .image{
+    padding: 0;
+    font-size: 0;
+      &::before,
+      &::after{
+        display: none;
+      }
+      img{
+        display: block;
+        width: 100%;
+        padding: $main-indent/4;
+        background: url(../img/borders/2.jpg) no-repeat center center / 100% 100%;
+      }
+      ul{
+        margin: 0 (-$image-correction-indent);
+      }
+      > img{
+        margin: 0 0 $main-indent;
+        padding: $main-indent/2;
+      }
+      .itm{
+        width: (25% - $image-correction-indent*2);
+        padding: 0 2.2727%;
+        box-sizing: content-box;
+      }
+  }
+}

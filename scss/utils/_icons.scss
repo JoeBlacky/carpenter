@@ -1,0 +1,45 @@
+/* Icons ================================================================================= */
+#{$icon-class}{
+  &::before,
+  &::after{
+    display: block;
+    font-family: $icons-font;
+    @extend %transition-normal-speed;
+  }
+  &.arrow-down{
+    &::before{
+      content: '\E800';
+    }
+  }
+  &.user{
+    &::before{
+      content: '\E801';
+    }
+  }
+  &.phone{
+    &::before{
+      content: '\E802';
+    }
+  }
+  &.mail{
+    &::before{
+      content: '\E803';
+    }
+  }
+  &.plane{
+    &::before{
+      content: '\E804';
+    }
+  }
+  &.close{
+    &::before{
+      content: '\E805';
+    }
+  }
+  &.text{
+    &::before{
+      content: '\E806'
+    }
+  }
+}
+/* ======================================================================================= */

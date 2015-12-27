@@ -1,0 +1,71 @@
+/* Keyframes ============================================================================= */
+    @include keyframes (slide){
+        0% {
+            @include translate(0, 0);
+        }
+        50% {
+            @include translate(0, 10px);
+        }
+        100% {
+            @include translate(0, 0);
+        }
+    }
+    @include keyframes (kinescope){
+        0% {
+            max-width: $min-width;
+            max-height: $main-indent*4;
+        }
+        50% {
+            max-width: $main-width;
+            max-height: $main-indent*4;
+        }
+        100%{
+            max-width: $main-width;
+            max-height: 100%;
+        }
+    }
+    @include keyframes (linescope){
+        100% {
+            max-width: $min-width;
+            max-height: $main-indent*4;
+        }
+        50% {
+            max-width: $main-width;
+            max-height: $main-indent*4;
+        }
+        0%{
+            max-width: $main-width;
+            max-height: 100%;
+        }
+    }
+    @-webkit-keyframes backSlideOut {
+        25% { opacity: .5; -webkit-transform: translateZ(-500px); }
+        75% { opacity: .5; -webkit-transform: translateZ(-500px) translateX(-200%); }
+        100% { opacity: .5; -webkit-transform: translateZ(-500px) translateX(-200%); }
+    }
+    @-moz-keyframes backSlideOut {
+        25% { opacity: .5; -moz-transform: translateZ(-500px); }
+        75% { opacity: .5; -moz-transform: translateZ(-500px) translateX(-200%); }
+        100% { opacity: .5; -moz-transform: translateZ(-500px) translateX(-200%); }
+    }
+    @keyframes backSlideOut {
+        25% { opacity: .5; transform: translateZ(-500px); }
+        75% { opacity: .5; transform: translateZ(-500px) translateX(-200%); }
+        100% { opacity: .5; transform: translateZ(-500px) translateX(-200%); }
+    }
+    @-webkit-keyframes backSlideIn {
+        0%, 25% { opacity: .5; -webkit-transform: translateZ(-500px) translateX(200%); }
+        75% { opacity: .5; -webkit-transform: translateZ(-500px); }
+        100% { opacity: 1; -webkit-transform: translateZ(0) translateX(0); }
+    }
+    @-moz-keyframes backSlideIn {
+        0%, 25% { opacity: .5; -moz-transform: translateZ(-500px) translateX(200%); }
+        75% { opacity: .5; -moz-transform: translateZ(-500px); }
+        100% { opacity: 1; -moz-transform: translateZ(0) translateX(0); }
+    }
+    @keyframes backSlideIn {
+        0%, 25% { opacity: .5; transform: translateZ(-500px) translateX(200%); }
+        75% { opacity: .5; transform: translateZ(-500px); }
+        100% { opacity: 1; transform: translateZ(0) translateX(0); }
+    }
+/* ======================================================================================= */

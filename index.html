@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Joe Blacky Development" />
+    <meta name="keywords" content="Front-end, web development, web, development, html, css, javascript" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <title>Сівальнев Ігор Іванович</title>
+
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/main.css" media="all" />
+    <script src="js/min/jquery.1.10.2.min.js"></script>
+    <script src="js/min/jquery.owl.carousel.min.js"></script>
+    <script src="js/min/jquery.viewport.selectors.min.js"></script>
+    <script src="js/min/main.min.js"></script>
+</head>
+<body>
+    <div class="page">
+        <header id="header">
+            <div class="mw">
+                <a href="/" class="itm logo">
+                    <img src="img/logo.png" alt="Logo" width="48" height="48">
+                </a>
+                <nav class="itm main-nav">
+                    <a href="#about" class="itm scroll-btn">Обо мне</a>
+                    <a href="#gallery" class="itm scroll-btn">Галлерея</a>
+                    <a href="#feedbacks" class="itm scroll-btn">Отзывы</a>
+                    <a href="#footer" class="itm scroll-btn">Контакты</a>
+                </nav>
+            </div>
+        </header>
+        <section id="hero-image">
+            <div class="itm content">
+                <h1>Добро пожаловать</h1>
+                <a href="#about" class="icn scroll-btn">Узнать больше</a>
+            </div>
+        </section>
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p><img src="img/about/me.jpeg" alt="Me" width="300" height="300" class="backgrounded" />Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.</p>
+            <p>Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я.</p>
+            <p>Я так счастлив, мой друг, так упоен ощущением покоя, что искусство мое страдает от этого. Ни одного штриха не мог бы я сделать, а никогда не был таким большим художником, как в эти минуты.</p>
+            <p>Мне не под силу это, меня подавляет величие этих явлений.Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.</p>
+            <p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое.</p>
+            <p>Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+        </section>
+        <section id="gallery">
+            <h2>Галлерея</h2>
+            <ul class="gallery-list">
+                <li class="itm popup-open" data-url="wooden-bad">
+                    <img src="img/gallery/1.jpg" alt="" width="320" height="200" />
+                </li>
+                <li class="itm popup-open" data-url="table-and-chairs">
+                    <img src="img/gallery/2.jpg" alt="" width="320" height="200" />
+                </li>
+                <li class="itm popup-open" data-url="sofas-and-table">
+                    <img src="img/gallery/3.jpg" alt="" width="320" height="200" />
+                </li>
+            </ul>
+        </section>
+        <section id="feedbacks">
+            <h2>Отзывы</h2>
+            <ul class="feedbacks-slider">
+                <li class="itm">
+                    <img class="itm lazyowl backgrounded" src="img/feedbacks/1.jpg" alt="" width="300" height="300" />
+                    <h3>Рыжая Мадама</h3>
+                    <q>Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я.</q>
+                </li>
+                <li class="itm">
+                    <img class="itm lazyowl backgrounded" src="img/feedbacks/2.jpg" alt="" width="300" height="300" />
+                    <h3>Еще Рыжая Мадама</h3>
+                    <q>Мне не под силу это, меня подавляет величие этих явлений.Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.</q>
+                </li>
+            </ul>
+        </section>
+        <footer id="footer">
+            <h2>Контакты</h2>
+            <div class="form-wrapper">
+                <form method="POST" action="forms.php" class="loading" novalidate>
+                    <fieldset class="form-row">
+                        <label for="name" class="icn user">Имя</label>
+                        <input type="text" id="name" name="name" placeholder="Имя" pattern="[А-я]{2,32}" required />
+                    </fieldset>
+                    <fieldset class="form-row">
+                        <label for="phone" class="icn phone">Телефон</label>
+                        <input type="text" id="phone" name="phone" placeholder="Телефон"/>
+                    </fieldset>
+                    <fieldset class="form-row">
+                        <label for="email" class="icn mail">Электронная почта</label>
+                        <input type="email" id="email" name="email" placeholder="Электронная почта"/>
+                    </fieldset>
+                    <fieldset class="form-row">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" placeholder="Текст сообщения"></textarea>
+                    </fieldset>
+                    <input type="submit" value="Отправить сообщение" />
+                </form>
+                <div class="message success">Сообщение доставлено</div>
+            </div>
+            <div class="additional">
+                <p class="itm copy">&copy; 2015</p>
+                <p class="itm dev">Разработано <a href="//jbdev.me" target="_blank">Joe Blacky</a></p>
+            </div>
+        </footer>
+        <div class="popup" id="popup">
+            <div class="itm content"></div>
+        </div>
+    </div>
+</body>
+</html>

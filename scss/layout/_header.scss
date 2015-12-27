@@ -1,0 +1,71 @@
+  $header-id: '#header';
+  $header-background: #2F100B;
+  $header-bg-image: url(../img/header/bg.jpg);
+  $logo-width: 48px;
+  $main-nav-class: '.main-nav';
+  $nav-link-color: #FFF;
+  $nav-link-border-distance: -$main-indent/4;
+// Header section, contains logo and main navigation. It fixed and positiooned at the top of the page.
+#{$header-id}{
+  position: fixed;
+  width: 100%;
+  padding: $main-indent/2 0;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: $header-background #{$header-bg-image} no-repeat center center / 100% 100%;
+  @extend %transition-normal-speed;
+  @include box-shadow(0 2px 2px 2px $header-background);
+}
+
+.logo{
+  position: relative;
+  z-index: 1;
+}
+// Main website navigation.
+#{$main-nav-class}{
+  width: 100%;
+  margin: 0 0 0 (-$logo-width);
+  text-align: right;
+  text-transform: uppercase;
+  font: 16px/30px $headings-font;
+  a{
+    color: $nav-link-color;
+  }
+  .itm{
+    position: relative;
+    margin: 0 0 0 $main-indent;
+    padding: 0 $main-indent/2;
+    cursor: pointer;
+    &:hover,
+    &.active{
+      &::before,
+      &::after{
+          @extend %visible;
+      }
+      &::before{
+          top: 0;
+      }
+      &::after{
+          bottom: 0;
+      }
+    }
+    &::before,
+    &::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      background: $nav-link-color;
+      @extend %hidden;
+      @extend %transition-normal-speed;
+    }
+    &::before{
+      top: $nav-link-border-distance;
+    }
+    &::after{
+      bottom: $nav-link-border-distance;
+    }
+  }
+}

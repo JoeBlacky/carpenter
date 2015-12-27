@@ -1,0 +1,66 @@
+$footer-bg-image: url(../img/footer/bg.jpg);
+// Footer
+footer{
+  padding-bottom: 0;
+  background: #462016 #{$footer-bg-image} no-repeat center center / cover;
+  perspective: 1000;
+  @include box-shadow(0 0 5px 0 #462016);
+  h2{
+    color: #FFF;
+  }
+  input[type="submit"]{
+    margin: 0 auto;
+  }
+  form{
+    background: #FFF;
+    @include box-shadow(0 0 1px #000);
+  }
+  form,
+  .message{
+    backface-visibility: hidden;
+  }
+  .message{
+    @include transform(rotateY(180deg) translate(50%,-50%));
+  }
+  .form-wrapper{
+    position: relative;
+    max-width: $main-width/2;
+    margin: 0 auto $main-indent*2;
+    padding: $main-indent/2;
+    background: #FFF url('../img/footer/border.jpg') no-repeat center center / 100% 100%;
+    transform-style: preserve-3d;
+    @include box-shadow(0 0 1px #000);
+    @extend %transition-slow-speed;
+    &.active{
+      @include transform(rotateY(180deg));
+      form{
+        &::before{
+          content: '';
+          background: #FFF;
+          z-index: 1;
+          @extend %overlay;
+        }
+      }
+    }
+  }
+}
+.additional{
+  padding: $main-indent 50%;
+  margin: 0 -50%;
+  background: rgba(#000, .5);
+  color: #FFF;
+  > .itm{
+    width: 50%;
+    font: 16px/1.3 $headings-font;
+  }
+  .dev{
+    text-align: right;
+  }
+  a{
+    color: $secondary-color;
+    @extend %inline-block-top;
+  }
+}
+.copy{
+  text-transform: uppercase;
+}

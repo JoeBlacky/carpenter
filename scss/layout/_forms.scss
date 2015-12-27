@@ -1,0 +1,89 @@
+/* Common ================================================================================ */
+  $label-width: 40px;
+  $label-height: $label-width;
+/* Common ================================================================================ */
+  form{
+    position: relative;
+    padding: $main-indent;
+  }
+  input,
+  textarea{
+    width: 100%;
+    margin: 0 0 $main-indent;
+    padding: $main-indent/2;
+    border: 1px solid #CCC;
+    outline: 0;
+    background: #FFF;
+    font: 14px/20px $primary-font;
+    color: #252525;
+    @extend %reset-appearence;
+    @extend %border-box;
+    @extend %transition-normal-speed;
+  }
+  input{
+    display: block;
+    height: $label-height;
+    text-indent: $label-width;
+    &[type="submit"],
+    &[type="button"]{
+      width: auto;
+      background: $secondary-color;
+      font: 16px/20px $headings-font;
+      cursor: pointer;
+      text-transform: uppercase;
+      text-indent: 0;
+      border: 0;
+      color: #FFF;
+      &:hover{
+          background: darken($secondary-color, 10%);
+      }
+    }
+  }
+  textarea{
+    height: 150px;
+    padding: 0 $main-indent/4;
+    resize: none;
+    line-height: 2;
+  }
+  label{
+    position: relative;
+    color: #252525;
+    font: 14px/20px $headings-font;
+    cursor: pointer;
+    @extend %inline-block-middle;
+    &::before{
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: $label-width;
+      height: $label-height;
+      text-align: center;
+      color: #252525;
+      background: #FFF;
+      font: ($label-height/2)/#{$label-height} $icons-font;
+      border: 1px solid #CCC;
+      @extend %border-box;
+      @extend %transition-normal-speed;
+    }
+  }
+  .validation{
+    &-error{
+      input,
+      label::before{
+        border-color: $error-color;
+      }
+      label::before{
+        color: $error-color;
+      }
+    }
+    &-passed{
+      input,
+      label::before{
+        border-color: $success-color;
+      }
+      label::before{
+        color: $success-color;
+      }
+    }
+  }
+/* ======================================================================================= */

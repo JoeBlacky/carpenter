@@ -1,0 +1,20 @@
+@import 'base/reset';
+@import 'base/fonts';
+
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+@import 'utils/keyframes';
+@import 'utils/icons';
+
+@import 'layout/header';
+@import 'layout/page';
+@import 'layout/forms';
+@import 'layout/footer';
+
+@import 'sections/hero-image';
+@import 'sections/about';
+@import 'sections/gallery';
+
+@import 'components/slider';
+@import 'components/popup';

@@ -1,0 +1,31 @@
+  $hero-image-section-id: '#hero-image';
+  $hero-image-section-bg-color: #D4B8A2;
+  $hero-image-section-color: #FFF;
+  $hero-image-bg-image: url(../img/hero-image/bg.jpg);
+// First section that users see when visiting website. Contains greetings text and scroll button.
+#{$hero-image-section-id}{
+  height: 100vh;
+  background: $hero-image-section-bg-color #{$hero-image-bg-image} no-repeat center center / cover;
+  color: $hero-image-section-color;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 2px solid $secondary-color;
+  &::before{
+    content: '';
+    height: 100%;
+    width: 0;
+    @extend %inline-block-middle;
+  }
+  h1{
+    font-size: 60px;
+  }
+  .icn{
+    font: 20px/1.3 $headings-font;
+    color: inherit;
+    &::after{
+      content: '\E800';
+      font-size: 30px;
+      @include animation(1s slide infinite);
+    }
+  }
+}

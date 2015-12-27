@@ -1,0 +1,46 @@
+$elements: 6;
+$gallery-bg-image: url(../img/gallery/bg.jpg);
+// Gallery section contains all products.
+#gallery{
+  position: relative;
+  padding-bottom: $main-indent*3;
+  background: #462016 #{$gallery-bg-image} no-repeat center center / 100% 100%;
+  color: #FFF;
+  @include box-shadow(0 0 5px 0 #462016);
+  &.active{
+    .itm{
+      @extend %visible;
+      @include translate(0,0);
+      @for $i from 1 through $elements {
+        &:nth-child(#{$i}) {
+          -webkit-transition-delay: ($fast-speed * $i);
+          -moz-transition-delay: ($fast-speed * $i);
+          transition-delay: ($fast-speed * $i);
+        }
+      }
+    }
+  }
+}
+.gallery-list{
+  padding: 1.6667%;
+  background: rgba(#FFF, .1);
+  .itm{
+    position: relative;
+    width: 30%;
+    margin: 1.6667%;
+    opacity: 0;
+    @extend %hidden;
+    @extend %transition-slow-speed;
+    @include translate(0,$main-indent*2);
+    &:hover{
+      img{
+        @include translate(0,-5px);
+      }
+    }
+    img{
+      padding: $main-indent/2;
+      background: #FFF url('../img/borders/2.jpg') no-repeat center center / 100% 100%;
+      @extend %transition-fast-speed;
+    }
+  }
+}

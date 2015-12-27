@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Primary';
+        src: url("../fonts/primary-font/Jura/Jura-Regular.eot") format("eot");
+        src: url("../fonts/primary-font/Jura/Jura-Regular.woff") format("woff"),
+             url("../fonts/primary-font/Jura/Jura-Regular.eot?#iefix") format("embedded-opentype"),
+             url("../fonts/primary-font/Jura/Jura-Regular.ttf") format("truetype"),
+             url("../fonts/primary-font/Jura/Jura-Regular.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Headings';
+        src: url("../fonts/primary-font/Jura/Jura-Regular.eot") format("eot");
+        src: url("../fonts/primary-font/Jura/Jura-Regular.woff") format("woff"),
+             url("../fonts/primary-font/Jura/Jura-Regular.eot?#iefix") format("embedded-opentype"),
+             url("../fonts/primary-font/Kelly_Slab/KellySlab-Regular.ttf") format("truetype"),
+             //url("../fonts/primary-font/Jura/Jura-Regular.ttf") format("truetype"),
+             url("../fonts/primary-font/Jura/Jura-Regular.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fontello';
+        src: url("../fonts/icons-font/fontello.eot") format("eot");
+        src: url("../fonts/icons-font/fontello.woff") format("woff"),
+             url("../fonts/icons-font/fontello.eot?#iefix") format("embedded-opentype"),
+             url("../fonts/icons-font/fontello.ttf") format("truetype"),
+             url("../fonts/icons-font/fontello.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}

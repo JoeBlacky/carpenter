@@ -1,0 +1,143 @@
+/* Common ================================================================================ */
+    body{
+        padding: 68px 0 0;
+        overflow-x: hidden;
+        font: 16px/1.3 $primary-font;
+    }
+    h1,
+    h2,
+    h3,
+    h4{
+        margin: 0 0 $main-indent;
+        text-transform: uppercase;
+        font-family: $headings-font;
+        font-weight: 400;
+        text-align: center;
+    }
+    h2{
+        font-size: 50px;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        text-shadow: rgba(#462016,0.5) 0px 1px 1px;
+    }
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+    td,
+    th{
+        width: 1%;
+        padding: $main-indent/4;
+    }
+    tr{
+        &:nth-child(odd){
+            background: rgba($secondary-color, .2);
+        }
+    }
+    .subtitle{
+        margin: 0 0 $main-indent/2;
+        font: 20px/1.1 $headings-font;
+        text-transform: uppercase;
+    }
+    .page{
+        max-width: $main-width;
+        min-width: $min-width;
+        margin: 0 auto;
+        font-size: 0;
+    }
+    .itm{
+        @extend %inline-block-middle;
+    }
+    .hdn{
+        @extend %hidden;
+    }
+    .mw{
+        max-width: $main-width;
+        margin: 0 auto;
+    }
+    section,
+    footer{
+        margin: 0 -50%;
+        padding: $main-indent 50%;
+        @extend %border-box;
+        p{
+            font-size: 20px;
+        }
+    }
+    .backgrounded{
+        width: 300px;
+        padding: 90px;
+        background: transparent no-repeat center center / 50% 50%;
+        @include border-radius(50%);
+        @extend %transition-slow-speed;
+        &.active{
+            background-size: 100% 100%;
+        }
+    }
+    .loading{
+      &::before{
+        content: '';
+        background: rgba(#FFF,.9) url(../img/loader.gif) no-repeat center center;
+        z-index: 1;
+        @include border-radius(2px);
+        @extend %overlay;
+        @extend %hidden;
+        @extend %transition-fast-speed;
+      }
+      &.active{
+        &::before{
+          @extend %visible;
+        }
+      }
+    }
+    .message{
+      position: absolute;
+      max-width: $min-width - $main-indent/2;
+      top: 50%;
+      left: 50%;
+      padding: $main-indent/2;
+      margin: $main-indent/2;
+      font: 16px/1 $headings-font;
+      color: $success-color;
+      border: 3px solid $success-color;
+      z-index: 1;
+      text-transform: uppercase;
+      text-align: center;
+      @extend %border-box;
+      @include translate(-50%,-50%);
+      &.error{
+        border-color: $error-color;
+        color: $error-color;
+      }
+    }
+
+
+
+    $feedbacks-color: #237546;
+    #feedbacks{
+        color: $feedbacks-color;
+    }
+    .feedbacks-slider{
+        max-width: $main-width/2;
+        margin: 0 auto;
+        .itm{
+            margin: 0 0 $main-indent;
+            text-align: center;
+        }
+        img{
+            padding: 100px;
+            background-image: url(../img/ornaments/sun.png);
+        }
+        h3{
+            position: relative;
+            margin: 0 0 $main-indent/2;
+            font-size: 30px;
+            color: darken($feedbacks-color, 10%);
+        }
+        q{
+            font-size: 20px;
+            color: #252525;
+        }
+    }
+/* ======================================================================================= */
